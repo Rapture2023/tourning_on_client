@@ -22,6 +22,7 @@ const Admin = () => {
 
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
+    // eslint-disable-next-line
     const handleChange = (e) =>{
         console.log(e.target.defaultChecked)
         console.log(e.target.value)
