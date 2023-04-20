@@ -24,10 +24,13 @@ const Footer = () => {
         </div>
         <div className="col"></div>
         <div className="col">
-        <p>Email: mail@tourningon.com</p>
-        <p >Contact: 09611 900 153</p>
-        <p >Website  www.tourningon.com</p>
-        <p >facebook: www.facebook.com/tourningon/</p>
+        <p>Corporate Address:  </p>
+        <p>tourning on </p>
+        <p >Level: 03, Ventura Iconia</p>
+        <p >House: 37, Road: 11</p>
+        <p >Banani, Dhaka - 1213</p>
+        <p >BD</p>
+      
       
         </div>
         </div>
