@@ -9,6 +9,10 @@ import {
 } from "react-router-dom";
 import Login from './pages/Login';
 import Admin from './pages/Admin';
+import ReturnRefund from './pages/ReturnRefund';
+import TermsConditions from './pages/TermsConditions';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Contact from './pages/Contact';
 
 window.id = "";
 
@@ -24,6 +28,22 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <Admin/>,
+  },
+  {
+    path: "/TermsConditions",
+    element: <TermsConditions/>,
+  },
+  {
+    path: "/PrivacyPolicy",
+    element: <PrivacyPolicy/>,
+  },
+  {
+    path: "/ReturnRefund",
+    element: <ReturnRefund/>,
+  },
+  {
+    path: "/Contact",
+    element: <Contact/>,
   },
 ]);
 

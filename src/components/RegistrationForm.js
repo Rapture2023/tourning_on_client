@@ -13,8 +13,37 @@ const RegistrationForm = () => {
     const [time, setTime] = useState("");
     const [service_type, setServiceType] = useState("");
     const [package1, setPackage1] = useState("");
+    const [packageOption, setpackageOption] = useState([]);
+    const [termsAccepted, setTermsAccepted] = useState(false);
     
+    const handleTermsAccepted = (e) => {
+        setTermsAccepted(e.target.checked);
+      };
+      const handleOptionChange = (e) => {
+        
+        setServiceType(e.target.value);
+        console.log(e.target.value);
+        // set text value based on selected option
+        if (e.target.value === "1" ) {
+            setServiceType("Bike");
+            setPickUpPoint("Kolatoli");
+            setpackageOption(["4hr : 840TK","6hr : 1240", "8hr : 1650TK","12hr : 2200TK","24hr : 2400TK"])
+            
+        } 
+        else if ( e.target.value === "2")
+        {
+            setServiceType("Scooty");
+            setPickUpPoint("Kolatoli");
+            setpackageOption(["4hr : 840TK","6hr : 1200", "8hr : 1550TK","12hr : 2000TK","24hr : 2200TK"])
+        }
+        else {
+            setServiceType("Chander-Gari");
+            setPickUpPoint("");
+            setpackageOption(["Half day(9am-3pm):4000","Half day(3pm-9pm):4000","Full day(9am-9pm):6000"])
+        }
+      }
     const handleSubmit = (e) =>{
+        
         e.preventDefault();
         let payload = {
             name,
@@ -72,14 +101,7 @@ const RegistrationForm = () => {
                             <input type="text" id="contact" className="form-control" aria-labelledby="contact" value={`${contact}`} onChange={(e) => setContact(e.target.value)} />
                         </div>
                     </div>
-                    <div className='row g-3 m-2 align-items-center'>
-                        <div className="col-3">
-                            <label htmlFor="pickup point" className="col-form-label">Pickup Point:</label>
-                        </div>
-                        <div className="col-9">
-                            <input type="text" id="pickup-point" className="form-control" aria-labelledby="pickup-point" value={`${pickup_point}`} onChange={(e) => setPickUpPoint(e.target.value)} />
-                        </div>
-                    </div>
+                    
                     <div className='row g-3 m-2 align-items-center'>
                         <div className="col-3">
                             <label htmlFor="date" className="col-form-label">Date:</label>
@@ -94,11 +116,11 @@ const RegistrationForm = () => {
                             <label htmlFor="time" className="col-form-label">Time:</label>
                         </div>
                         <div className="col-5">
-                            <select className="form-select" aria-label="Package" value={`${time}`} onChange={(e) => setTime(e.target.value)}>
+                            <select className="form-select" aria-label="Package" value={`${time}`} onChange={(e) => {setTime(e.target.value); console.log(e.target.value)}}>
                                 <option value="-1" defaultValue={"Select"}>Select</option>
                                 {
                                     datePicker.map((date, index) =>{
-                                        return <option key={index} value={index}>{date}</option>
+                                        return <option key={index}>{date}</option>
                                     })
                                 }
                             </select>
@@ -107,25 +129,11 @@ const RegistrationForm = () => {
 
                     <div className='row g-3 m-2 align-items-center'>
                         <div className="col-3">
-                            <label htmlFor="package" className="col-form-label">Package:</label>
+                            <label htmlFor="service-type" className="col-form-label">Vehicle Type:</label>
                         </div>
-                        <div className="col-5">
-                            <select className="form-select" aria-label="Package" value={`${package1}`} onChange={(e) => setPackage1(e.target.value)}>
-                                <option value="0"defaultValue={"Select"}>Select</option>
-                                <option value="1">6hr : 800TK</option>
-                                <option value="2">8hr : 1000TK</option>
-                                <option value="3">12hr : 1200TK</option>
-                                <option value="4">24hr : 2000TK</option>
-                            </select>
-                        </div>
-                    </div>
 
-                    <div className='row g-3 m-2 align-items-center'>
-                        <div className="col-3">
-                            <label htmlFor="service-type" className="col-form-label">Service Type:</label>
-                        </div>
                         <div className="col-5">
-                            <select className="form-select" aria-label="service type" value={`${service_type}`} onChange={(e) => setServiceType(e.target.value)}>
+                            <select className="form-select" aria-label="service type" value={`${service_type}`} onChange={ handleOptionChange}>
                                 <option value="0" defaultValue={"Select"}>Select</option>
                                 <option value="1">Bike</option>
                                 <option value="2">Scooty</option>
@@ -133,7 +141,44 @@ const RegistrationForm = () => {
                             </select>
                         </div>
                     </div>
+                    
+                    <div className='row g-3 m-2 align-items-center'>
+                        <div className="col-3">
+                            <label htmlFor="package" className="col-form-label">Package:</label>
+                        </div>
+                        <div className="col-5">
+                            <select className="form-select" aria-label="Package" value={`${package1}`} onChange={(e) => setPackage1(e.target.value)}>
+                                <option value="0"defaultValue={"Select"}>Select</option>
+                                {packageOption.map(option => (
+                                <option key={option} value={option}>{option}</option>
+                                 ))}
+                            
+                            </select>
+                        </div>
+                    </div>
 
+                 
+
+                    <div className='row g-3 m-2 align-items-center'>
+                        <div className="col-3">
+                            <label htmlFor="pickup point" className="col-form-label">Pickup Point:</label>
+                        </div>
+                        <div className="col-9">
+                            <input type="text" id="pickup-point" className="form-control" aria-labelledby="pickup-point" value={`${pickup_point}`} onChange={(e) => setPickUpPoint(e.target.value)} />
+                        </div>
+                    </div>     
+                    <div className='row g-3 m-2 align-items-center'>
+                    <label>
+        <input
+          type="checkbox"
+          name="terms"
+          checked={termsAccepted}
+          onChange={handleTermsAccepted}
+          required
+        />
+          I have read and agree to the Terms and Conditions.
+      </label>
+                    </div>
                     <div className='row g-3 m-2 align-items-center justify-content-center'>
                         <div className="">
                             <input type="submit" id="submit" className="form-control bg-primary text-white" aria-labelledby="submit" />

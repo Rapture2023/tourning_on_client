@@ -1,5 +1,5 @@
 import './App.css';
-import AccordionComp from './components/AccordionComp';
+//import AccordionComp from './components/AccordionComp';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import RegistrationForm from './components/RegistrationForm';
@@ -12,8 +12,9 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
+      
       <Slider/>
-      <AccordionComp/>
+      
       <SocialMediaSection/>
       <RegistrationForm/>
       <Footer/>

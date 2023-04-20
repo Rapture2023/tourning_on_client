@@ -2,7 +2,41 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='container-fluid mt-5 shadow'><div className=''>Copyright By Tourning - Created By Noman!</div></div>
+    
+    <div className='container-fluid mt-5 shadow'>
+      
+      
+      <div className="text-center"> 
+        
+        <h3 className="text-uppercase" >Contact Us</h3>
+        </div>
+        
+        <p className="text-center">Please feel free to call or  write to us for any kind of queries or requests.</p>
+        <div>
+        <div className="container"> 
+      <div className="row">
+        <div className="col">
+        <p>Email: mail@tourningon.com</p>
+        <p >Contact: 09611 900 153</p>
+        <p >Website  www.tourningon.com</p>
+        <p >facebook: www.facebook.com/tourningon/</p>
+      
+        </div>
+        <div className="col"></div>
+        <div className="col">
+        <p>Email: mail@tourningon.com</p>
+        <p >Contact: 09611 900 153</p>
+        <p >Website  www.tourningon.com</p>
+        <p >facebook: www.facebook.com/tourningon/</p>
+      
+        </div>
+        </div>
+        </div>
+        </div>
+     
+      <div className=''>Copyright By Tourning - Created By Noman and Salekin!</div>
+      </div>
+
   )
 }
 
