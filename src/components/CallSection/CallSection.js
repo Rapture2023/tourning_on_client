@@ -21,7 +21,7 @@ const CallSection = () => {
           </div>
         </Col>
         <Col md={6} sm={12} className="right">
-          <h3>Turning on COX'S BAZAR</h3>
+          <h4>Turning on COX'S BAZAR</h4>
           <p>
             Get exciting deals on booking a Vehicle at Cox's Bazar. More
             services coming soon .
