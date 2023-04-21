@@ -1,30 +1,42 @@
-import React from 'react'
+import React from "react";
+
+import Image1 from "../images/banner1.png";
+import Image2 from "../images/banner2.png";
+import Image3 from "../images/1.jpg";
+import Carousel from "react-bootstrap/Carousel";
+
+import "./Slider.scss";
 
 const Slider = () => {
-    return (
-            <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
-            <div className="carousel-inner">
-                <div className="carousel-item active carousel-item-start" data-bs-interval="10000" style={{height: '500px'}}>
-                    <img className="bd-placeholder-img object-fit-cover bd-placeholder-img-lg d-block w-100 carousel-img-1"  src="1.jpg" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false" />
-                </div>
-                <div className="carousel-item carousel-item-next carousel-item-start" data-bs-interval="2000" style={{height: '500px'}}>
-                    <img className="bd-placeholder-img bd-placeholder-img-lg object-fit-cover d-block w-100 carousel-img-1"  src="2.jpg" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false" />
-                </div>
-                <div className="carousel-item" style={{height: '500px'}}>
-                    <img className="bd-placeholder-img bd-placeholder-img-lg d-block object-fit-cover w-100 carousel-img-1" src="3.jpg" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false" />
-                </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Previous</span>
-                </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
+  return (
+    <div className="carousal-wrapper">
+      <Carousel
+        indicators={false}
+        className="carousal-item"
+        fade
+        variant="dark"
+      >
+        <Carousel.Item className="carousal-item">
+          <img className="d-block  w-100 " src={Image1} alt="First slide" />
+          {/* <Carousel.Caption>
+        <h3>First slide label</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </Carousel.Caption> */}
+        </Carousel.Item>
+        <Carousel.Item interval={1000} className="carousal-item">
+          <img className="d-block  w-100" src={Image2} alt="Second slide" />
+          {/* <Carousel.Caption>
+        <h3>Second slide label</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </Carousel.Caption> */}
+        </Carousel.Item>
+        {/* <Carousel.Item interval={1000} className="carousal-item">
+          <img className="d-block  w-100" src={Image3} alt="Third slide" />
         
-    )
-}
+        </Carousel.Item> */}
+      </Carousel>
+    </div>
+  );
+};
 
-export default Slider
+export default Slider;
