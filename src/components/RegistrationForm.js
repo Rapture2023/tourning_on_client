@@ -72,7 +72,7 @@ const RegistrationForm = () => {
         "24hr : 2200TK",
       ]);
     } else {
-      setServiceType("Chander-Gari");
+      setServiceType("Chander-Gaari");
       setPickUpPoint("");
       setpackageOption([
         "Half day(9am-3pm):4000TK",
