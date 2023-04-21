@@ -75,9 +75,9 @@ const RegistrationForm = () => {
       setServiceType("Chander-Gari");
       setPickUpPoint("");
       setpackageOption([
-        "Half day(9am-3pm):4000",
-        "Half day(3pm-9pm):4000",
-        "Full day(9am-9pm):6000",
+        "Half day(9am-3pm):4000TK",
+        "Half day(3pm-9pm):4000TK",
+        "Full day(9am-9pm):6000TK",
       ]);
     }
   };
