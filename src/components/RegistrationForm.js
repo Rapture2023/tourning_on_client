@@ -51,22 +51,22 @@ const RegistrationForm = () => {
     setServiceType(e.target.value);
     console.log(e.target.value);
     // set text value based on selected option
-    if (e.target.value === "1") {
+    if (e.target.value === "Bike") {
       setServiceType("Bike");
       setPickUpPoint("Kolatoli");
       setpackageOption([
         "4hr : 840TK",
-        "6hr : 1240",
+        "6hr : 1240TK",
         "8hr : 1650TK",
         "12hr : 2200TK",
         "24hr : 2400TK",
       ]);
-    } else if (e.target.value === "2") {
+    } else if (e.target.value === "Scooty") {
       setServiceType("Scooty");
       setPickUpPoint("Kolatoli");
       setpackageOption([
         "4hr : 840TK",
-        "6hr : 1200",
+        "6hr : 1200TK",
         "8hr : 1550TK",
         "12hr : 2000TK",
         "24hr : 2200TK",
@@ -248,9 +248,9 @@ const RegistrationForm = () => {
                 <option value="0" defaultValue={"Select"}>
                   Select
                 </option>
-                <option value="1">Bike</option>
-                <option value="2">Scooty</option>
-                <option value="3">Chander Gaari</option>
+                <option value="Bike">Bike</option>
+                <option value="Scooty">Scooty</option>
+                <option value="Chander-Gaari">Chander Gaari</option>
               </select>
             </div>
           </div>
